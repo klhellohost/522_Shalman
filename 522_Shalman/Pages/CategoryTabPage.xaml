@@ -1,0 +1,74 @@
+﻿<Page x:Class="_522_Shalman.Pages.CategoryTabPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:_522_Shalman.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CategoryTabPage">
+
+	<Grid Margin="20,25">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<!-- Таблица — больше отступов, чуть выше строки -->
+		<DataGrid x:Name="DataGridCategory"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Margin="0,0,0,15"
+                  RowHeight="42"
+                  FontSize="14"
+                  GridLinesVisibility="Horizontal"
+                  HeadersVisibility="Column">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Категория"
+                                    Binding="{Binding Name}"
+                                    Width="*"
+                                    FontWeight="Medium"/>
+
+				<DataGridTemplateColumn Header="Действия" Width="Auto">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Content="Редактировать"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Click="ButtonEdit_Click"
+                                    Tag="{Binding}"
+                                    Width="110"
+                                    Height="32"
+                                    Margin="6"
+                                    Padding="10,0"
+                                    FontSize="13"/>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+
+		<!-- Кнопки — слева, чуть крупнее, с промежутком -->
+		<StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Margin="0,5,0,10">
+
+			<Button Content="Добавить"
+                    Width="115"
+                    Height="38"
+                    Margin="0,0,14,0"
+                    FontSize="14"
+                    Style="{StaticResource ButtonStyle}"
+                    Click="ButtonAdd_Click"/>
+
+			<Button Content="Удалить"
+                    Width="115"
+                    Height="38"
+                    Margin="0"
+                    FontSize="14"
+                    Style="{StaticResource ButtonStyle}"
+                    Click="ButtonDel_Click"/>
+		</StackPanel>
+	</Grid>
+</Page>

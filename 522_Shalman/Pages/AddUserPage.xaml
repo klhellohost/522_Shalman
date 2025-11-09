@@ -1,0 +1,91 @@
+﻿<Page x:Class="_522_Shalman.Pages.AddUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:_522_Shalman.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddUserPage">
+
+	<Grid Margin="25,30">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="130"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<!-- Логин -->
+		<TextBlock Text="Логин:" Grid.Row="0"
+                   FontSize="15" FontWeight="SemiBold"
+                   Margin="0,0,0,6"
+                   Style="{StaticResource LinkTextBlockStyle}"
+                   VerticalAlignment="Center"/>
+		<TextBox x:Name="TBLogin" Grid.Row="0" Grid.Column="1"
+                 Margin="0,0,0,10" Height="36" Padding="10,0"
+                 Style="{StaticResource TextBoxStyle}" Text="{Binding Login}"/>
+
+		<!-- Пароль -->
+		<TextBlock Text="Пароль:" Grid.Row="1"
+                   FontSize="15" FontWeight="SemiBold"
+                   Margin="0,0,0,6"
+                   Style="{StaticResource LinkTextBlockStyle}"
+                   VerticalAlignment="Center"/>
+		<TextBox x:Name="TBPass" Grid.Row="1" Grid.Column="1"
+                 Margin="0,0,0,10" Height="36" Padding="10,0"
+                 Style="{StaticResource TextBoxStyle}" Text="{Binding Password}"/>
+
+		<!-- Роль -->
+		<TextBlock Text="Роль:" Grid.Row="2"
+                   FontSize="15" FontWeight="SemiBold"
+                   Margin="0,0,0,6"
+                   Style="{StaticResource LinkTextBlockStyle}"
+                   VerticalAlignment="Center"/>
+		<ComboBox x:Name="cmbRole" Grid.Row="2" Grid.Column="1"
+                  Margin="0,0,0,10" Height="36" Padding="8,0"
+                  Style="{StaticResource ComboBoxStyle}" SelectedItem="{Binding Role}">
+			<ComboBoxItem Content="Admin"/>
+			<ComboBoxItem Content="User"/>
+		</ComboBox>
+
+		<!-- ФИО -->
+		<TextBlock Text="ФИО:" Grid.Row="3"
+                   FontSize="15" FontWeight="SemiBold"
+                   Margin="0,0,0,6"
+                   Style="{StaticResource LinkTextBlockStyle}"
+                   VerticalAlignment="Center"/>
+		<TextBox x:Name="TBFio" Grid.Row="3" Grid.Column="1"
+                 Margin="0,0,0,10" Height="36" Padding="10,0"
+                 Style="{StaticResource TextBoxStyle}" Text="{Binding FIO}"/>
+
+		<!-- Фото -->
+		<TextBlock Text="Фото (путь):" Grid.Row="4"
+                   FontSize="15" FontWeight="SemiBold"
+                   Margin="0,0,0,6"
+                   Style="{StaticResource LinkTextBlockStyle}"
+                   VerticalAlignment="Center"/>
+		<TextBox x:Name="TBPhoto" Grid.Row="4" Grid.Column="1"
+                 Margin="0,0,0,15" Height="36" Padding="10,0"
+                 Style="{StaticResource TextBoxStyle}" Text="{Binding Photo}"/>
+
+		<!-- Кнопки — сдвинуты влево, чуть компактнее -->
+		<StackPanel Grid.Row="5" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Margin="0,12">
+			<Button x:Name="ButtonClean" Content="Очистить"
+                    Width="108" Height="37" Margin="0,0,14,0"
+                    Style="{StaticResource ButtonStyle}" Click="ButtonClean_Click"/>
+			<Button x:Name="ButtonSave" Content="Сохранить"
+                    Width="108" Height="37" Margin="0"
+                    Style="{StaticResource ButtonStyle}" Click="ButtonSave_Click"/>
+		</StackPanel>
+	</Grid>
+</Page>

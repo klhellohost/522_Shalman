@@ -1,0 +1,73 @@
+﻿<Page x:Class="_522_Shalman.Pages.RegPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Регистрация">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Логин:" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtbxLog" Grid.Row="0" Grid.Column="1" Height="30"
+                 TextChanged="txtbxLog_TextChanged"
+                 Style="{StaticResource TextBoxStyle}"/>
+        <Label x:Name="lblLogHitn" Content="Введите логин" Foreground="Gray"
+               Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+               Margin="5,0,0,0"
+               MouseLeftButtonUp="lblLogHitn_MouseLeftButtonUp"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Пароль:" VerticalAlignment="Center"/>
+        <PasswordBox x:Name="passBxFrst" Grid.Row="1" Grid.Column="1" Height="30"
+                     PasswordChanged="passBxFrst_PasswordChanged"
+                     Style="{StaticResource PasswordBoxStyle}"/>
+        <Label x:Name="lblPassHitn" Content="Введите пароль" Foreground="Gray"
+               Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+               Margin="5,0,0,0"
+               MouseLeftButtonUp="lblPassHitn_MouseLeftButtonUp"/>
+
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Повторите пароль:" VerticalAlignment="Center"/>
+        <PasswordBox x:Name="passBxScnd" Grid.Row="2" Grid.Column="1" Height="30"
+                     PasswordChanged="passBxScnd_PasswordChanged"
+                     Style="{StaticResource PasswordBoxStyle}"/>
+        <Label x:Name="lblPassSecHitn" Content="Повторите пароль" Foreground="Gray"
+               Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"
+               Margin="5,0,0,0"
+               MouseLeftButtonUp="lblPassSecHitn_MouseLeftButtonUp"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Роль:" VerticalAlignment="Center"/>
+        <ComboBox x:Name="comboBxRole" Grid.Row="3" Grid.Column="1" Height="30"
+                  Style="{StaticResource ComboBoxStyle}">
+            <ComboBoxItem Content="Admin"/>
+            <ComboBoxItem Content="User"/>
+        </ComboBox>
+
+
+        <Label Grid.Row="4" Grid.Column="0" Content="ФИО:" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtbxFIO" Grid.Row="4" Grid.Column="1" Height="30"
+                 TextChanged="txtbxFIO_TextChanged"
+                 Style="{StaticResource TextBoxStyle}"/>
+        <Label x:Name="lblFioHitn" Content="Введите ФИО" Foreground="Gray"
+               Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"
+               Margin="5,0,0,0"
+               MouseLeftButtonUp="lblFioHitn_MouseLeftButtonUp"/>
+
+
+        <Button x:Name="regButton" Grid.Row="5" Grid.Column="1" Content="Зарегистрироваться"
+                Width="200" Height="40" HorizontalAlignment="Left"
+                Margin="0,10,0,0"
+                Click="regButton_Click"
+                Style="{StaticResource ButtonStyle}"/>
+    </Grid>
+</Page>

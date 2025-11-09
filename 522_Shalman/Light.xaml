@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ===== Buttons ===== -->
+    <SolidColorBrush x:Key="ButtonBackground" Color="#A7D8FF"/>
+    <!-- нежно-голубой -->
+    <SolidColorBrush x:Key="ButtonHoverBackground" Color="#8CCBFF"/>
+    <!-- чуть насыщеннее -->
+    <SolidColorBrush x:Key="ButtonPressedBackground" Color="#6AB8FF"/>
+    <!-- темнее при нажатии -->
+
+    <!-- ===== TextBoxes ===== -->
+    <SolidColorBrush x:Key="TextBoxBackground" Color="#E8F6FF"/>
+    <!-- почти белый с голубым -->
+
+    <!-- ===== Page ===== -->
+    <SolidColorBrush x:Key="PageBackground" Color="#F3FAFF"/>
+    <!-- очень светлый фон страницы -->
+
+    <!-- ===== Text & Borders ===== -->
+    <SolidColorBrush x:Key="Foreground" Color="#0E2F4A"/>
+    <!-- тёмно-синий текст -->
+    <SolidColorBrush x:Key="BorderBrush" Color="#6AB8FF"/>
+    <!-- голубые рамки -->
+    <SolidColorBrush x:Key="HyperlinkForeground" Color="#007ACC"/>
+    <!-- насыщенный голубой для ссылок -->
+</ResourceDictionary>

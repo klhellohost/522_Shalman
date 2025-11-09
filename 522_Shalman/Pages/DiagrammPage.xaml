@@ -1,0 +1,88 @@
+﻿<Page x:Class="_522_Shalman.Pages.DiagrammPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:_522_Shalman.Pages"
+      xmlns:charts="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DiagrammPage" Style="{StaticResource PageStyle}">
+
+	<Grid Margin="25,20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Панель управления — ровнее, компактнее, слева -->
+		<StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="0,0,0,18"
+                    >
+
+
+			<StackPanel Orientation="Vertical" >
+				<TextBlock Text="Пользователь"
+                           FontSize="15"
+                           FontWeight="SemiBold"
+                           Style="{StaticResource LinkTextBlockStyle}" />
+				<ComboBox x:Name="cmbUsers"
+                          Width="190"
+                          Height="36"
+                          Padding="10,0"
+                          FontSize="14"
+                          SelectionChanged="cmbUsers_SelectionChanged"
+                          DisplayMemberPath="FIO"
+                          SelectedValuePath="ID"
+                          SelectedItem="{Binding User}" />
+			</StackPanel>
+
+			<!-- Тип диаграммы -->
+			<StackPanel Orientation="Vertical" >
+				<TextBlock Text="Тип диаграммы"
+                           FontSize="15"
+                           FontWeight="SemiBold"
+                           Style="{StaticResource LinkTextBlockStyle}" />
+				<ComboBox x:Name="cmbDiagramm"
+                          Width="170"
+                          Height="36"
+                          Padding="10,0"
+                          FontSize="14"
+                          SelectionChanged="cmbDiagramm_SelectionChanged" />
+			</StackPanel>
+
+			<!-- Кнопки экспорта — чуть крупнее -->
+			<StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Bottom"
+                        >
+				<Button x:Name="wordBtn"
+                        Content="В Word"
+                        Width="110"
+                        Height="36"
+                        FontSize="14"
+                        Style="{StaticResource ButtonStyle}"
+                        Click="wordBtn_Click" />
+				<Button x:Name="excelBtn"
+                        Content="В Excel"
+                        Width="110"
+                        Height="36"
+                        FontSize="14"
+                        Style="{StaticResource ButtonStyle}"
+                        Click="excelBtn_Click" />
+			</StackPanel>
+		</StackPanel>
+
+		<!-- Диаграмма — заполняет всё пространство -->
+		<WindowsFormsHost Grid.Row="1"
+                          Margin="0,0,0,15">
+			<charts:Chart x:Name="ChartPayments">
+				<charts:Chart.Legends>
+					<charts:Legend />
+				</charts:Chart.Legends>
+			</charts:Chart>
+		</WindowsFormsHost>
+	</Grid>
+</Page>
